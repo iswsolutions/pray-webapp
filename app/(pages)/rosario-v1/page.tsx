@@ -43,9 +43,9 @@ export default function RosarioV1Home() {
         className="mx-auto flex max-w-6xl flex-col gap-12 px-4 py-8 sm:gap-16 sm:px-6 sm:py-10 lg:px-12"
       >
         <header className="sticky top-3 z-20 px-1 sm:px-2 sm:top-4">
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+          <div className="flex flex-col items-start gap-2">
             <Link
-              href="/"
+              href="/rosario"
               className="inline-flex items-center gap-1.5 rounded-full border border-sky-100/60 bg-white/90 px-4 py-2 text-sm font-semibold backdrop-blur-sm shadow-lg shadow-sky-100 transition sm:px-5 sm:py-2.5"
               style={{ color: "#0369a1" }}
             >
@@ -62,9 +62,9 @@ export default function RosarioV1Home() {
               >
                 <path d="M15 18l-6-6 6-6" />
               </svg>
-              Inicio
+              Volver a menu Rosario
             </Link>
-            <span className="rounded-full border border-sky-100/60 bg-white/90 px-4 py-2 text-sm font-semibold text-sky-700 backdrop-blur-sm shadow-lg shadow-sky-100 sm:px-5 sm:py-2.5 sm:text-base">
+            <span className="rounded-full border border-sky-100/60 bg-white/90 px-4 py-2 text-sm font-semibold text-sky-700 backdrop-blur-sm shadow-lg shadow-sky-100 sm:px-5 sm:py-2.5 sm:text-base self-center">
               {todayMessage}
             </span>
           </div>

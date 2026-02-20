@@ -1,4 +1,4 @@
-export default function RosarioAudioPage() {
+export default function RosarioVideoPage() {
   return (
     <div className="min-h-screen font-sans" style={{ background: "#e8f4fd" }}>
       <div className="max-w-sm mx-auto px-4 py-8">
@@ -14,7 +14,7 @@ export default function RosarioAudioPage() {
         </div>
 
         <p className="text-center font-bold text-base" style={{ color: "#1a6bb5" }}>
-          Rosario en Audio
+          Rosario en Video
         </p>
 
         <div

@@ -1,7 +1,8 @@
 export default function RosarioVideo() {
   return (
-    <div
-      className="rounded-2xl p-6 text-left w-full max-w-sm mx-auto mb-6"
+    <a
+      href="/rosario/video"
+      className="rounded-2xl p-6 text-left w-full max-w-sm mx-auto mb-6 block"
       style={{
         background: "#fffcf8",
         borderTop: "3px solid #c89a20",
@@ -27,6 +28,6 @@ export default function RosarioVideo() {
         Santo Rosario
       </p>
 
-    </div>
+    </a>
   );
 }
