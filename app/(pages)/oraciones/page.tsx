@@ -1,6 +1,11 @@
 export default function OracionesPage() {
   return (
-    <div className="min-h-screen font-sans" style={{ background: "#fef5de" }}>
+    <div
+      className="min-h-screen font-sans"
+      style={{
+        background: "linear-gradient(160deg, #fffbee 0%, #fdf0c0 50%, #f9e49a 100%)",
+      }}
+    >
       <section className="py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto mb-8">
           <a
@@ -28,6 +33,14 @@ export default function OracionesPage() {
             style={{ background: "#c89a20", color: "#fff" }}
           >
             Rosario
+            <span aria-hidden className="text-xs">→</span>
+          </a>
+          <a
+            href="/ave-maria"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-medium transition-all duration-200"
+            style={{ background: "#c89a20", color: "#fff" }}
+          >
+            Ave María
             <span aria-hidden className="text-xs">→</span>
           </a>
         </div>
