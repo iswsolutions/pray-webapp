@@ -1,4 +1,4 @@
-import PageUnderConstructionComponent from "@/components/PageUnderConstructionComponent";
+import AveMariaCardVideo from "@/components/AveMariaCardVideo";
 
 export default function AveMariaPageVideo() {
   return (
@@ -19,7 +19,7 @@ export default function AveMariaPageVideo() {
         </a>
       </div>
 
-      <PageUnderConstructionComponent />
+      <AveMariaCardVideo />
     </div>
   );
 }

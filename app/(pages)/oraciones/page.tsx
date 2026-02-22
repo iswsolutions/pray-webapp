@@ -10,7 +10,7 @@ export default function OracionesPage() {
         <div className="max-w-6xl mx-auto mb-8">
           <a
             href="/"
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-medium transition-all duration-200"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-medium transition-all duration-200 hover:bg-amber-50 active:scale-95 active:bg-amber-100"
             style={{ border: "1px solid #c89a20", color: "#9a6812" }}
           >
             <span aria-hidden className="text-xs">←</span>
@@ -21,7 +21,7 @@ export default function OracionesPage() {
         <div className="max-w-6xl mx-auto mt-10 flex flex-wrap gap-4">
           <a
             href="/padre-nuestro"
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-medium transition-all duration-200"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-amber-300/40 active:scale-95 active:brightness-90"
             style={{ background: "#c89a20", color: "#fff" }}
           >
             Padre Nuestro
@@ -29,7 +29,7 @@ export default function OracionesPage() {
           </a>
           <a
             href="/rosario"
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-medium transition-all duration-200"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-amber-300/40 active:scale-95 active:brightness-90"
             style={{ background: "#c89a20", color: "#fff" }}
           >
             Rosario
@@ -37,7 +37,7 @@ export default function OracionesPage() {
           </a>
           <a
             href="/ave-maria"
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-medium transition-all duration-200"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-amber-300/40 active:scale-95 active:brightness-90"
             style={{ background: "#c89a20", color: "#fff" }}
           >
             Ave María
