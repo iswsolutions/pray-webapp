@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "WebSearch",
-      "Bash(npm audit:*)"
+      "Bash(npm audit:*)",
+      "Bash(git:*)"
     ]
   }
 }
