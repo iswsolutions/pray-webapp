@@ -1,3 +1,4 @@
+{/* L: this card is used in: RosarioAudioPage, MGozososAudioPage */}
 export default function MGozososCard() {
   return (
     <a
