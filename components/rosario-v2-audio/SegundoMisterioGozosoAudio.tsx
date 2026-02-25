@@ -99,14 +99,14 @@ export default function SegundoMisterioGozosoAudio() {
         <button
           type="button"
           onClick={handlePlay}
-          className="flex items-center justify-center w-7 h-7 rounded-full transition-all duration-200 hover:scale-110 active:scale-95 hover:shadow-md hover:shadow-sky-200"
+          className="flex items-center justify-center w-9 h-9 rounded-full transition-all duration-200 hover:scale-110 active:scale-95 hover:shadow-md hover:shadow-sky-200"
           style={{
             background: "#0ea5e9",
             boxShadow: audioState === "playing" ? "0 0 0 3px rgba(14,165,233,0.35), 0 0 10px rgba(14,165,233,0.5)" : undefined,
             transform: audioState === "playing" ? "scale(1.12)" : undefined,
           }}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-white">
             <path d="M8 5v14l11-7z" />
           </svg>
         </button>
@@ -114,13 +114,13 @@ export default function SegundoMisterioGozosoAudio() {
         <button
           type="button"
           onClick={handlePause}
-          className="flex items-center justify-center w-7 h-7 rounded-full transition-all duration-200 hover:scale-110 active:scale-95 hover:shadow-md"
+          className="flex items-center justify-center w-9 h-9 rounded-full transition-all duration-200 hover:scale-110 active:scale-95 hover:shadow-md"
           style={{
             background: audioState === "paused" ? "rgba(14,165,233,0.35)" : "rgba(14,165,233,0.12)",
             boxShadow: audioState === "paused" ? "0 0 0 2px rgba(14,165,233,0.3)" : undefined,
           }}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3" style={{ color: "#0369a1" }}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" style={{ color: "#0369a1" }}>
             <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
           </svg>
         </button>
@@ -128,10 +128,10 @@ export default function SegundoMisterioGozosoAudio() {
         <button
           type="button"
           onClick={handleStop}
-          className="flex items-center justify-center w-7 h-7 rounded-full transition-all duration-200 hover:scale-110 active:scale-95 hover:shadow-md"
+          className="flex items-center justify-center w-9 h-9 rounded-full transition-all duration-200 hover:scale-110 active:scale-95 hover:shadow-md"
           style={{ background: audioState === "idle" ? "rgba(14,165,233,0.25)" : "rgba(14,165,233,0.12)" }}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3" style={{ color: "#0369a1" }}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" style={{ color: "#0369a1" }}>
             <path d="M6 6h12v12H6z" />
           </svg>
         </button>

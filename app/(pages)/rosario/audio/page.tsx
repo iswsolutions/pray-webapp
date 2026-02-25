@@ -21,7 +21,7 @@ export default function RosarioAudioPage() {
       {/* Centered content */}
       <div className="flex-1 flex flex-col justify-center">
         <div className="max-w-sm mx-auto w-full px-4">
-          <p className="text-center font-bold text-base mb-3" style={{ color: "#1a6bb5" }}>
+          <p className="text-center font-bold text-2xl mb-3" style={{ color: "#1a6bb5" }}>
             Rosario en Audio
           </p>
 
