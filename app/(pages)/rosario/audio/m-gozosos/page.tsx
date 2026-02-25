@@ -1,9 +1,9 @@
-import MGozososCard from "@/components/MGozososCard";
-import PrimerMisterioGozosoAudio from "@/components/rosario-v1/PrimerMisterioGozosoAudio";
-import SegundoMisterioGozosoAudio from "@/components/rosario-v1/SegundoMisterioGozosoAudio";
-import TercerMisterioGozosoAudio from "@/components/rosario-v1/TercerMisterioGozosoAudio";
-import CuartoMisterioGozosoAudio from "@/components/rosario-v1/CuartoMisterioGozosoAudio";
-import QuintoMisterioGozosoAudio from "@/components/rosario-v1/QuintoMisterioGozosoAudio";
+import MGozososCard from "@/components/rosario-v2-audio/MGozososCard";
+import PrimerMisterioGozosoAudio from "@/components/rosario-v2-audio/PrimerMisterioGozosoAudio";
+import SegundoMisterioGozosoAudio from "@/components/rosario-v2-audio/SegundoMisterioGozosoAudio";
+import TercerMisterioGozosoAudio from "@/components/rosario-v2-audio/TercerMisterioGozosoAudio";
+import CuartoMisterioGozosoAudio from "@/components/rosario-v2-audio/CuartoMisterioGozosoAudio";
+import QuintoMisterioGozosoAudio from "@/components/rosario-v2-audio/QuintoMisterioGozosoAudio";
 
 export default function MGozososAudioPage() {
   return (

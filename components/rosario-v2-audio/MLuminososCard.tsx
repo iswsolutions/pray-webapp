@@ -1,7 +1,8 @@
-export default function MGloriososCard() {
+export default function MLuminososCard() {
   return (
-    <div
-      className="relative w-full max-w-sm mx-auto mb-3 rounded-2xl p-4"
+    <a
+      href="/rosario/audio/m-luminosos"
+      className="block relative w-full max-w-sm mx-auto mb-3 rounded-2xl p-4 cursor-pointer"
       style={{
         background: "linear-gradient(145deg, rgba(238,247,254,0.85) 0%, rgba(212,236,250,0.75) 100%)",
         backdropFilter: "blur(16px)",
@@ -35,7 +36,7 @@ export default function MGloriososCard() {
             textShadow: "0 1px 8px rgba(26,107,181,0.3)",
           }}
         >
-          Misterios Gloriosos
+          Misterios Luminosos
         </p>
       </div>
 
@@ -46,6 +47,6 @@ export default function MGloriososCard() {
           background: "linear-gradient(90deg, transparent, rgba(26,107,181,0.35), transparent)",
         }}
       />
-    </div>
+    </a>
   );
 }
