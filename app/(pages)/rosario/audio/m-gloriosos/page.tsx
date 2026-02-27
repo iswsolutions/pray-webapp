@@ -1,4 +1,10 @@
 import MGloriososCard from "@/components/rosario-v2-audio/MGloriososCard";
+import PreMisterioDolorososAudio from "@/components/rosario-v2-audio/PreMisterioDolorososAudio";
+import PrimerMisterioGloriosoAudio from "@/components/rosario-v2-audio/PrimerMisterioGloriosoAudio";
+import SegundoMisterioGloriosoAudio from "@/components/rosario-v2-audio/SegundoMisterioGloriosoAudio";
+import TercerMisterioGloriosoAudio from "@/components/rosario-v2-audio/TercerMisterioGloriosoAudio";
+import CuartoMisterioGloriosoAudio from "@/components/rosario-v2-audio/CuartoMisterioGloriosoAudio";
+import QuintoMisterioGloriosoAudio from "@/components/rosario-v2-audio/QuintoMisterioGloriosoAudio";
 
 export default function MGloriososAudioPage() {
   return (
@@ -19,9 +25,24 @@ export default function MGloriososAudioPage() {
       <div className="flex-1 flex flex-col justify-center">
         <div className="max-w-sm mx-auto w-full px-4">
           <MGloriososCard />
-          <p className="mt-4 text-center text-xl font-medium text-sky-700">
-            Página en construcción
-          </p>
+          <div className="mt-3">
+            <PreMisterioDolorososAudio />
+          </div>
+          <div className="mt-3">
+            <PrimerMisterioGloriosoAudio />
+          </div>
+          <div className="mt-3">
+            <SegundoMisterioGloriosoAudio />
+          </div>
+          <div className="mt-3">
+            <TercerMisterioGloriosoAudio />
+          </div>
+          <div className="mt-3">
+            <CuartoMisterioGloriosoAudio />
+          </div>
+          <div className="mt-3">
+            <QuintoMisterioGloriosoAudio />
+          </div>
         </div>
       </div>
     </div>

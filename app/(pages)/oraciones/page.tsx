@@ -1,88 +1,114 @@
 export default function OracionesPage() {
   return (
     <div
-      className="min-h-screen font-sans"
-      style={{
-        background: "linear-gradient(160deg, #fffbee 0%, #fdf0c0 50%, #f9e49a 100%)",
-      }}
+      className="min-h-screen font-sans flex flex-col"
+      style={{ background: "linear-gradient(160deg, #fffbee 0%, #fdf0c0 50%, #f9e49a 100%)" }}
     >
-      <section className="py-16 sm:py-24 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto mb-8">
-          <a
-            href="/"
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-medium transition-all duration-200 hover:bg-amber-50 active:scale-95 active:bg-amber-100"
-            style={{ border: "1px solid #c89a20", color: "#9a6812" }}
-          >
-            <span aria-hidden className="text-xs">←</span>
-            Volver al inicio
-          </a>
-        </div>
+      {/* Back button */}
+      <div className="max-w-sm mx-auto w-full px-4 pt-4 pb-2">
+        <a
+          href="/"
+          className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-medium transition-all duration-200"
+          style={{ border: "1px solid #c89a20", color: "#9a6812" }}
+        >
+          <span aria-hidden className="text-xs">←</span>
+          Volver al inicio
+        </a>
+      </div>
 
-        <div className="max-w-6xl mx-auto mt-10 flex flex-wrap gap-4">
-          <a
-            href="/padre-nuestro"
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-amber-300/40 active:scale-95 active:brightness-90"
-            style={{ background: "#c89a20", color: "#fff" }}
-          >
-            Padre Nuestro
-            <span aria-hidden className="text-xs">→</span>
-          </a>
-          <a
-            href="/rosario"
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-amber-300/40 active:scale-95 active:brightness-90"
-            style={{ background: "#c89a20", color: "#fff" }}
-          >
-            Rosario
-            <span aria-hidden className="text-xs">→</span>
-          </a>
-          <a
-            href="/ave-maria"
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-amber-300/40 active:scale-95 active:brightness-90"
-            style={{ background: "#c89a20", color: "#fff" }}
-          >
-            Ave María
-            <span aria-hidden className="text-xs">→</span>
-          </a>
-        </div>
+      {/* Centered content */}
+      <div className="flex-1 flex flex-col justify-center">
+        <div className="max-w-sm mx-auto w-full px-4">
 
-        <div className="max-w-6xl mx-auto mt-12">
+          {/* Page title */}
+          <p className="text-center font-bold text-2xl mb-5" style={{ color: "#9a6812" }}>
+            Oraciones
+          </p>
+
+          {/* Prayer cards */}
+          {[
+            { label: "Ave María", href: "/ave-maria" },
+            { label: "Padre Nuestro", href: "/padre-nuestro" },
+            { label: "Rosario", href: "/rosario" },
+          ].map(({ label, href }) => (
+            <a
+              key={href}
+              href={href}
+              className="block relative w-full max-w-sm mx-auto mb-3 rounded-2xl p-4 cursor-pointer transition-all duration-200 hover:-translate-y-1"
+              style={{
+                background: "linear-gradient(145deg, rgba(255,251,238,0.9) 0%, rgba(253,240,192,0.8) 100%)",
+                backdropFilter: "blur(16px)",
+                WebkitBackdropFilter: "blur(16px)",
+                border: "1px solid rgba(200,154,32,0.3)",
+                boxShadow:
+                  "0 2px 4px rgba(200,154,32,0.08), 0 8px 24px rgba(200,154,32,0.14), 0 24px 48px rgba(154,104,18,0.10)",
+              }}
+            >
+              {/* Glowing top accent */}
+              <div
+                className="absolute top-0 left-6 right-6 h-px rounded-full"
+                style={{
+                  background: "linear-gradient(90deg, transparent, rgba(240,201,58,0.8), transparent)",
+                }}
+              />
+
+              <div className="flex items-center justify-between gap-3 px-1">
+                <p
+                  className="font-semibold uppercase"
+                  style={{
+                    color: "#9a6812",
+                    fontSize: "1rem",
+                    letterSpacing: "0.12em",
+                    textShadow: "0 1px 8px rgba(200,154,32,0.25)",
+                  }}
+                >
+                  {label}
+                </p>
+                <span className="text-xs" style={{ color: "#c89a20" }}>→</span>
+              </div>
+
+              {/* Bottom glow accent */}
+              <div
+                className="absolute bottom-0 left-6 right-6 h-px rounded-full"
+                style={{
+                  background: "linear-gradient(90deg, transparent, rgba(200,154,32,0.35), transparent)",
+                }}
+              />
+            </a>
+          ))}
+
+          {/* Coming soon card */}
           <div
-            className="relative overflow-hidden rounded-3xl px-10 py-16 text-center"
+            className="relative overflow-hidden rounded-2xl p-6 mt-2 text-center"
             style={{
-              background: "linear-gradient(135deg, #fffbee 0%, #fdf0c0 50%, #f9e49a 100%)",
-              border: "1px solid #e8c84a",
-              boxShadow: "0 8px 40px rgba(200,154,32,0.18), 0 2px 8px rgba(200,154,32,0.10)",
+              background: "linear-gradient(145deg, rgba(255,251,238,0.7) 0%, rgba(253,240,192,0.6) 100%)",
+              border: "1px dashed rgba(200,154,32,0.4)",
+              boxShadow: "0 2px 12px rgba(200,154,32,0.08)",
             }}
           >
-            {/* Decorative top accent line */}
             <div
-              className="absolute top-0 left-0 right-0 h-1 rounded-t-3xl"
-              style={{ background: "linear-gradient(90deg, #c89a20, #f0c93a, #c89a20)" }}
+              className="absolute top-0 left-6 right-6 h-px rounded-full"
+              style={{
+                background: "linear-gradient(90deg, transparent, rgba(240,201,58,0.5), transparent)",
+              }}
             />
-
-            {/* Icon */}
-            <div className="flex justify-center mb-6">
-              <span style={{ fontSize: "3rem", lineHeight: 1 }}>🕊️</span>
-            </div>
-
-            {/* Heading */}
+            <span style={{ fontSize: "2rem", lineHeight: 1 }}>{"🕊\uFE0E"}</span>
             <h2
-              className="text-2xl sm:text-3xl font-semibold tracking-tight mb-3"
+              className="mt-3 text-base font-semibold tracking-tight"
               style={{ color: "#7a5010" }}
             >
               Otras oraciones
             </h2>
-
-            {/* Body */}
             <p
-              className="text-base sm:text-lg font-medium"
-              style={{ color: "#a87828" }}
+              className="mt-1 text-sm font-medium"
+              style={{ color: "#b8892a" }}
             >
               por ser incorporadas pronto
             </p>
           </div>
+
         </div>
-      </section>
+      </div>
     </div>
   );
 }
