@@ -43,6 +43,16 @@ export default function MGloriososAudioPage() {
           <div className="mt-3">
             <QuintoMisterioGloriosoAudio />
           </div>
+          <div className="pt-4 pb-2">
+            <a
+              href="/rosario/audio"
+              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-medium transition-all duration-200"
+              style={{ border: "1px solid #1a6bb5", color: "#1a6bb5" }}
+            >
+              <span aria-hidden className="text-xs">←</span>
+              Atras a Rosario en Audio
+            </a>
+          </div>
         </div>
       </div>
     </div>
