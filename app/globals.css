@@ -30,6 +30,28 @@ a, a:visited {
   color: inherit;
 }
 
+/* Gold range input thumb */
+.range-gold::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #c89a20;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 4px rgba(200,154,32,0.5);
+}
+.range-gold::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #c89a20;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 4px rgba(200,154,32,0.5);
+}
+
 /* Strong active/tap feedback for touch devices */
 @media (hover: none) {
   button:active {

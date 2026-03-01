@@ -1,4 +1,4 @@
-import PageUnderConstructionComponent from "@/components/PageUnderConstructionComponent";
+import PadreNuestroCardVideo from "@/components/PadreNuestroCardVideo";
 
 export default function PadreNuestroPageVideo() {
   return (
@@ -14,7 +14,7 @@ export default function PadreNuestroPageVideo() {
         </a>
       </div>
 
-      <PageUnderConstructionComponent />
+      <PadreNuestroCardVideo />
     </div>
   );
 }

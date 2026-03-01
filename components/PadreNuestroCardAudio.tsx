@@ -5,15 +5,38 @@ import { URLS } from "@/lib/urls";
 
 type AudioState = "idle" | "playing" | "paused";
 
+function formatTime(seconds: number): string {
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60);
+  return `${m}:${s.toString().padStart(2, "0")}`;
+}
+
 export default function PadreNuestroCardAudio() {
   const router = useRouter();
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [audioState, setAudioState] = useState<AudioState>("idle");
+  const [progress, setProgress] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const isSeekingRef = useRef(false);
 
   function getAudio(): HTMLAudioElement {
     if (!audioRef.current) {
       audioRef.current = new Audio(URLS.padreNuestroAudio);
-      audioRef.current.onended = () => setAudioState("idle");
+      audioRef.current.onended = () => {
+        setAudioState("idle");
+        setProgress(0);
+        setCurrentTime(0);
+      };
+      audioRef.current.onloadedmetadata = () => {
+        setDuration(audioRef.current!.duration);
+      };
+      audioRef.current.ontimeupdate = () => {
+        if (isSeekingRef.current) return;
+        const audio = audioRef.current!;
+        setCurrentTime(audio.currentTime);
+        setProgress(audio.duration ? (audio.currentTime / audio.duration) * 100 : 0);
+      };
     }
     return audioRef.current;
   }
@@ -33,6 +56,26 @@ export default function PadreNuestroCardAudio() {
     audio.pause();
     audio.currentTime = 0;
     setAudioState("idle");
+    setProgress(0);
+    setCurrentTime(0);
+  }
+
+  function handleSeekStart() {
+    isSeekingRef.current = true;
+  }
+
+  function handleSeekChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const value = Number(e.target.value);
+    const audio = getAudio();
+    setProgress(value);
+    if (isFinite(audio.duration) && audio.duration > 0) {
+      audio.currentTime = (value / 100) * audio.duration;
+      setCurrentTime(audio.currentTime);
+    }
+  }
+
+  function handleSeekEnd() {
+    isSeekingRef.current = false;
   }
 
   return (
@@ -57,6 +100,30 @@ export default function PadreNuestroCardAudio() {
       >
         Padre Nuestro
       </p>
+
+      {/* Progress bar */}
+      <div className="mt-5 px-1" onClick={(e) => e.stopPropagation()}>
+        <input
+          type="range"
+          min={0}
+          max={100}
+          value={progress}
+          onChange={handleSeekChange}
+          onMouseDown={handleSeekStart}
+          onTouchStart={handleSeekStart}
+          onMouseUp={handleSeekEnd}
+          onTouchEnd={handleSeekEnd}
+          onKeyUp={handleSeekEnd}
+          className="w-full h-1.5 rounded-full appearance-none cursor-pointer range-gold"
+          style={{
+            background: `linear-gradient(to right, #c89a20 ${progress}%, rgba(200,154,32,0.15) ${progress}%)`,
+          }}
+        />
+        <div className="mt-1 flex justify-between text-xs" style={{ color: "#b8975a" }}>
+          <span>{formatTime(currentTime)}</span>
+          <span>{duration > 0 && isFinite(duration) ? formatTime(duration) : "--:--"}</span>
+        </div>
+      </div>
 
       {/* Audio controls */}
       <div
