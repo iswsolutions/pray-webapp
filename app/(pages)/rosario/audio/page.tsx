@@ -1,9 +1,20 @@
+"use client";
+
 import MGozososCard from "@/components/rosario-v2-audio/MGozososCard";
 import MDolorososCard from "@/components/rosario-v2-audio/MDolorososCard";
 import MGloriososCard from "@/components/rosario-v2-audio/MGloriososCard";
 import MLuminososCard from "@/components/rosario-v2-audio/MLuminososCard";
+import { getTodayMessage } from "@/lib/todayMessage";
+
+const misterioKeywords = ["Gozosos", "Dolorosos", "Gloriosos", "Luminosos"];
 
 export default function RosarioAudioPage() {
+  const todayMessage = getTodayMessage();
+  const highlightedKeyword =
+    misterioKeywords.find((k) =>
+      todayMessage.toLowerCase().includes(k.toLowerCase()),
+    ) ?? "";
+
   return (
     <div className="min-h-screen font-sans flex flex-col" style={{ background: "#e8f4fd" }}>
       {/* Back button — top */}
@@ -21,14 +32,24 @@ export default function RosarioAudioPage() {
       {/* Centered content */}
       <div className="flex-1 flex flex-col justify-center">
         <div className="max-w-sm mx-auto w-full px-4">
+          <span
+            className="block text-center rounded-full px-4 py-2 text-sm font-semibold mb-3"
+            style={{
+              border: "1px solid rgba(26,107,181,0.3)",
+              background: "rgba(255,255,255,0.85)",
+              color: "#1a6bb5",
+            }}
+          >
+            {todayMessage}
+          </span>
           <p className="text-center font-bold text-2xl mb-3" style={{ color: "#1a6bb5" }}>
             Rosario en Audio
           </p>
 
-          <MGozososCard />
-          <MDolorososCard />
-          <MGloriososCard />
-          <MLuminososCard />
+          <MGozososCard isHighlighted={highlightedKeyword === "Gozosos"} />
+          <MDolorososCard isHighlighted={highlightedKeyword === "Dolorosos"} />
+          <MGloriososCard isHighlighted={highlightedKeyword === "Gloriosos"} />
+          <MLuminososCard isHighlighted={highlightedKeyword === "Luminosos"} />
         </div>
       </div>
     </div>

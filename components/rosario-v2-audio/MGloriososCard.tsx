@@ -1,4 +1,4 @@
-export default function MGloriososCard() {
+export default function MGloriososCard({ isHighlighted }: { isHighlighted?: boolean }) {
   return (
     <a
       href="/rosario/audio/m-gloriosos"
@@ -7,9 +7,10 @@ export default function MGloriososCard() {
         background: "linear-gradient(145deg, rgba(238,247,254,0.85) 0%, rgba(212,236,250,0.75) 100%)",
         backdropFilter: "blur(16px)",
         WebkitBackdropFilter: "blur(16px)",
-        border: "1px solid rgba(26,107,181,0.25)",
-        boxShadow:
-          "0 2px 4px rgba(26,107,181,0.08), 0 8px 24px rgba(26,107,181,0.14), 0 24px 48px rgba(10,60,120,0.12)",
+        border: isHighlighted ? "2px solid rgba(26,107,181,0.75)" : "1px solid rgba(26,107,181,0.25)",
+        boxShadow: isHighlighted
+          ? "0 2px 4px rgba(26,107,181,0.12), 0 8px 24px rgba(26,107,181,0.28), 0 24px 48px rgba(10,60,120,0.18), 0 0 0 3px rgba(26,107,181,0.18)"
+          : "0 2px 4px rgba(26,107,181,0.08), 0 8px 24px rgba(26,107,181,0.14), 0 24px 48px rgba(10,60,120,0.12)",
       }}
     >
       {/* Glowing top accent */}
