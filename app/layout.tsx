@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   title: "Oraciones Católicas",
   description:
     "Un santuario digital de oraciones católicas para los fieles de habla hispana.",
+  icons: {
+    icon: "/favicon-image.png",
+  },
 };
 
 export default function RootLayout({
