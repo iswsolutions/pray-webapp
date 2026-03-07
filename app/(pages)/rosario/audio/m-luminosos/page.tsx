@@ -5,6 +5,7 @@ import SegundoMisterioLuminosoAudio from "@/components/rosario-v2-audio/SegundoM
 import TercerMisterioLuminosoAudio from "@/components/rosario-v2-audio/TercerMisterioLuminosoAudio";
 import CuartoMisterioLuminosoAudio from "@/components/rosario-v2-audio/CuartoMisterioLuminosoAudio";
 import QuintoMisterioLuminosoAudio from "@/components/rosario-v2-audio/QuintoMisterioLuminosoAudio";
+import LetaniasCard from "@/components/letanias/LetaniasCard";
 
 export default function MLuminososAudioPage() {
   return (
@@ -33,6 +34,7 @@ export default function MLuminososAudioPage() {
             <CuartoMisterioLuminosoAudio />
             <QuintoMisterioLuminosoAudio />
           </div>
+          <LetaniasCard />
           <div className="pt-4 pb-2">
             <a
               href="/rosario/audio"

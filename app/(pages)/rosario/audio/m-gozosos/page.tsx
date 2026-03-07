@@ -4,6 +4,7 @@ import SegundoMisterioGozosoAudio from "@/components/rosario-v2-audio/SegundoMis
 import TercerMisterioGozosoAudio from "@/components/rosario-v2-audio/TercerMisterioGozosoAudio";
 import CuartoMisterioGozosoAudio from "@/components/rosario-v2-audio/CuartoMisterioGozosoAudio";
 import QuintoMisterioGozosoAudio from "@/components/rosario-v2-audio/QuintoMisterioGozosoAudio";
+import LetaniasCard from "@/components/letanias/LetaniasCard";
 
 export default function MGozososAudioPage() {
   return (
@@ -29,6 +30,7 @@ export default function MGozososAudioPage() {
           <TercerMisterioGozosoAudio />
           <CuartoMisterioGozosoAudio />
           <QuintoMisterioGozosoAudio />
+          <LetaniasCard />
           <div className="pt-4 pb-2">
             <a
               href="/rosario/audio"

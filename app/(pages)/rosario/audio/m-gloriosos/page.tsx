@@ -5,6 +5,7 @@ import SegundoMisterioGloriosoAudio from "@/components/rosario-v2-audio/SegundoM
 import TercerMisterioGloriosoAudio from "@/components/rosario-v2-audio/TercerMisterioGloriosoAudio";
 import CuartoMisterioGloriosoAudio from "@/components/rosario-v2-audio/CuartoMisterioGloriosoAudio";
 import QuintoMisterioGloriosoAudio from "@/components/rosario-v2-audio/QuintoMisterioGloriosoAudio";
+import LetaniasCard from "@/components/letanias/LetaniasCard";
 
 export default function MGloriososAudioPage() {
   return (
@@ -42,6 +43,9 @@ export default function MGloriososAudioPage() {
           </div>
           <div className="mt-3">
             <QuintoMisterioGloriosoAudio />
+          </div>
+          <div className="mt-3">
+            <LetaniasCard />
           </div>
           <div className="pt-4 pb-2">
             <a
