@@ -42,6 +42,7 @@ export default function MisteriosGloriososPage() {
           <CredoCard />
 
           <PrimerMisterioGloriosoCard />
+          <PadreNuestroCard />
           <AveMariaCard />
           <RezarAveMarias />
           <Gloria />
