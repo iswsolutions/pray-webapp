@@ -5,7 +5,7 @@ export default function Gloria() {
         Gloria al Padre y al Hijo y al Espíritu Santo. Como era en el principio
         ahora y siempre, por los siglos de los siglos. Amén.
       </p>
-      <p className="mt-3 text-right text-xs tracking-wide text-slate-400">
+      <p className="mt-3 text-right text-sm tracking-wide text-slate-600">
         nombre de la oración: Gloria
       </p>
     </article>

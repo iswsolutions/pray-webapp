@@ -6,7 +6,7 @@ export default function OracionDeFatimaCard() {
         infierno, lleva al Cielo a todas las almas, especialmente a las más
         necesitadas de Tu misericordia.
       </p>
-      <p className="mt-3 text-right text-xs tracking-wide text-slate-400">
+      <p className="mt-3 text-right text-sm tracking-wide text-slate-600">
         nombre de la oración: Oración de Fátima
       </p>
     </article>

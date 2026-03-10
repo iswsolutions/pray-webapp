@@ -17,7 +17,7 @@ export default function CredoCard() {
         santos, el perdón de los pecados, la resurrección de la carne y la vida
         eterna. Amén.
       </p>
-      <p className="absolute bottom-4 right-5 text-xs tracking-wide text-slate-400">
+      <p className="absolute bottom-4 right-5 text-sm tracking-wide text-slate-600">
         nombre de la oración: Credo
       </p>
     </article>

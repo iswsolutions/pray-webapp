@@ -4,7 +4,7 @@ export default function SenalDeLaCruz() {
       <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
         En el nombre del Padre, y del Hijo, y del Espíritu Santo. Amén.
       </p>
-      <p className="mt-3 text-right text-xs tracking-wide text-slate-400">
+      <p className="mt-3 text-right text-sm tracking-wide text-slate-600">
         nombre de la oración: Señal de la Cruz
       </p>
     </article>

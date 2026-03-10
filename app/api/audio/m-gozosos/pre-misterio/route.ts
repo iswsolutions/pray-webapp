@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const BLOB_URL = "https://bqjbdtbgbpaqrlau.private.blob.vercel-storage.com/Primer%20M%20Gozoso.mp3";
+const BLOB_URL = "https://bqjbdtbgbpaqrlau.private.blob.vercel-storage.com/Anuncio%20del%20Primer%20Misterio%20%28Gozosos%29.mp3";
 
 export async function GET(request: NextRequest) {
   const token = process.env.BLOB_READ_WRITE_TOKEN;

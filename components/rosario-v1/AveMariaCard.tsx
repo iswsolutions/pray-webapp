@@ -7,7 +7,7 @@ export default function AveMariaCard() {
         vientre, Jesús. Santa María, Madre de Dios, ruega por nosotros
         pecadores, ahora y en la hora de nuestra muerte. Amén.
       </p>
-      <p className="mt-3 text-right text-xs tracking-wide text-slate-400">
+      <p className="mt-3 text-right text-sm tracking-wide text-slate-600">
         nombre de la oración: AveMaría
       </p>
     </article>

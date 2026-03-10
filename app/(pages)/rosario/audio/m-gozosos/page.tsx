@@ -1,4 +1,5 @@
 import MGozososCard from "@/components/rosario-v2-audio/MGozososCard";
+import PreMisteriosGozososAudio from "@/components/rosario-v2-audio/PreMisteriosGozososAudio";
 import PrimerMisterioGozosoAudio from "@/components/rosario-v2-audio/PrimerMisterioGozosoAudio";
 import SegundoMisterioGozosoAudio from "@/components/rosario-v2-audio/SegundoMisterioGozosoAudio";
 import TercerMisterioGozosoAudio from "@/components/rosario-v2-audio/TercerMisterioGozosoAudio";
@@ -25,6 +26,7 @@ export default function MGozososAudioPage() {
       <div className="flex-1 flex flex-col justify-center">
         <div className="max-w-sm mx-auto w-full px-4">
           <MGozososCard />
+          <PreMisteriosGozososAudio />
           <PrimerMisterioGozosoAudio />
           <SegundoMisterioGozosoAudio />
           <TercerMisterioGozosoAudio />

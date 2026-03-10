@@ -5,7 +5,7 @@ export default function MariaMadreDeGracia() {
         María, Madre de gracia, Madre de misericordia, En la vida y en la
         muerte, ampáranos, gran Señora.
       </p>
-      <p className="mt-3 text-right text-xs tracking-wide text-slate-400">
+      <p className="mt-3 text-right text-sm tracking-wide text-slate-600">
         nombre de la oración: María, Madre de Gracia
       </p>
     </article>

@@ -7,7 +7,7 @@ export default function InfinitasGracias() {
         y siempre bajo tu protección y amparo. Y para más obligarte, te
         saludamos con una Salve.
       </p>
-      <p className="mt-3 text-right text-xs tracking-wide text-slate-400">
+      <p className="mt-3 text-right text-sm tracking-wide text-slate-600">
         nombre de la oración: Infinitas Gracias
       </p>
     </article>

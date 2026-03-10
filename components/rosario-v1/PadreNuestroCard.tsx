@@ -8,7 +8,7 @@ export default function PadreNuestroCard() {
         también nosotros perdonamos a los que nos ofenden. No nos dejes caer en
         la tentación, y líbranos del mal. Amén.
       </p>
-      <p className="mt-3 text-right text-xs tracking-wide text-slate-400">
+      <p className="mt-3 text-right text-sm tracking-wide text-slate-600">
         nombre de la oración: Padre Nuestro
       </p>
     </article>

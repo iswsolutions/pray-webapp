@@ -13,7 +13,7 @@ export default function Salve() {
         Ruega por nosotros, Santa Madre de Dios, para que seamos dignos de alcanzar
         las promesas de Nuestro Señor Jesucristo. Amén.
       </p>
-      <p className="mt-3 text-right text-xs tracking-wide text-slate-400">
+      <p className="mt-3 text-right text-sm tracking-wide text-slate-600">
         nombre de la oración: Salve
       </p>
     </article>
