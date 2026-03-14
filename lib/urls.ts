@@ -7,4 +7,6 @@ export const URLS = {
   mDolorososAudio: "/api/audio/m-dolorosos",
   mGloriososAudio: "/api/audio/m-gloriosos",
   mLuminososAudio: "/api/audio/m-luminosos",
+  mariaMadreDeGraciaAudio: "/api/audio/maria-madre-de-gracia",
+  mariaMadreDeGraciaVideo: "/api/video/maria-madre-de-gracia",
 };

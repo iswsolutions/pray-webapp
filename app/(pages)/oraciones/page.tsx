@@ -28,6 +28,7 @@ export default function OracionesPage() {
           {/* Prayer cards */}
           {[
             { label: "Ave María", href: "/ave-maria" },
+            { label: "María Madre de Gracia", href: "/maria-madre-de-gracia" },
             { label: "Padre Nuestro", href: "/padre-nuestro" },
             { label: "Rosario", href: "/rosario" },
           ].map(({ label, href }) => (
