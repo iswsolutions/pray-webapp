@@ -63,6 +63,7 @@ export default function MisteriosGloriososPage() {
           <RezarAveMarias />
           <Gloria />
           <OracionDeFatimaCard />
+          <MariaMadreDeGracia />
 
           <CuartoMisterioGlorioso />
           <PadreNuestroCard />
