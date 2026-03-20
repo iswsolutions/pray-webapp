@@ -93,6 +93,27 @@ export default function MariaMadreDeGraciaCardVideo() {
           onEnded={() => { setVideoState("idle"); setIsLoading(false); }}
         />
 
+        {/* Idle placeholder */}
+        {videoState === "idle" && !isLoading && (
+          <div
+            className="absolute inset-0 flex flex-col items-center justify-center rounded-2xl gap-3"
+            style={{ background: "linear-gradient(145deg, rgba(255,252,245,0.92) 0%, rgba(255,243,210,0.88) 100%)" }}
+          >
+            <span
+              className="text-5xl"
+              style={{ color: "#c89a20", textShadow: "0 0 24px rgba(200,154,32,0.4)" }}
+            >
+              {"✝\uFE0E"}
+            </span>
+            <span
+              className="text-sm font-medium uppercase"
+              style={{ color: "#9a7848", letterSpacing: "0.18em" }}
+            >
+              María Madre de Gracia
+            </span>
+          </div>
+        )}
+
         {/* Loading overlay */}
         {isLoading && (
           <div
