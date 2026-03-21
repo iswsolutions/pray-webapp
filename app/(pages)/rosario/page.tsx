@@ -41,7 +41,7 @@ export default function RosarioPage() {
             href="/"
             className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-medium transition-all duration-200 border border-white/40 text-white/90 hover:border-white/75 hover:bg-white/[0.08] active:bg-white/[0.12] mb-8"
           >
-            <span aria-hidden className="text-xs">←</span>
+            <svg aria-hidden width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5"/><path d="M12 5l-7 7 7 7"/></svg>
             Volver al inicio
           </a>
 
