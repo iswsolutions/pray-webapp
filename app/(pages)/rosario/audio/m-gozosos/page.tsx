@@ -1,4 +1,5 @@
 import MGozososCard from "@/components/rosario-v2-audio/MGozososCard";
+import MGozososAudio from "@/components/rosario-v2-audio/MGozososAudio";
 import PreMisteriosGozososAudio from "@/components/rosario-v2-audio/PreMisteriosGozososAudio";
 import PrimerMisterioGozosoAudio from "@/components/rosario-v2-audio/PrimerMisterioGozosoAudio";
 import SegundoMisterioGozosoAudio from "@/components/rosario-v2-audio/SegundoMisterioGozosoAudio";
@@ -25,13 +26,20 @@ export default function MGozososAudioPage() {
       {/* Centered content */}
       <div className="flex-1 flex flex-col justify-center">
         <div className="max-w-sm mx-auto w-full px-4">
-          <MGozososCard />
-          <PreMisteriosGozososAudio />
-          <PrimerMisterioGozosoAudio />
-          <SegundoMisterioGozosoAudio />
-          <TercerMisterioGozosoAudio />
-          <CuartoMisterioGozosoAudio />
-          <QuintoMisterioGozosoAudio />
+          <div className="-mb-3">
+            <MGozososCard />
+          </div>
+          <div className="flex justify-center">
+            <MGozososAudio />
+          </div>
+          <div className="mt-4 flex flex-col gap-3">
+            <PreMisteriosGozososAudio />
+            <PrimerMisterioGozosoAudio />
+            <SegundoMisterioGozosoAudio />
+            <TercerMisterioGozosoAudio />
+            <CuartoMisterioGozosoAudio />
+            <QuintoMisterioGozosoAudio />
+          </div>
           <LetaniasCard />
           <div className="pt-4 pb-2">
             <a

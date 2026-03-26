@@ -1,4 +1,5 @@
 import MLuminososCard from "@/components/rosario-v2-audio/MLuminososCard";
+import MLuminososAudio from "@/components/rosario-v2-audio/MLuminososAudio";
 import PreMisteriosLuminososAudio from "@/components/rosario-v2-audio/PreMisteriosLuminososAudio";
 import PrimerMisterioLuminosoAudio from "@/components/rosario-v2-audio/PrimerMisterioLuminosoAudio";
 import SegundoMisterioLuminosoAudio from "@/components/rosario-v2-audio/SegundoMisterioLuminosoAudio";
@@ -25,7 +26,12 @@ export default function MLuminososAudioPage() {
       {/* Centered content */}
       <div className="flex-1 flex flex-col justify-center">
         <div className="max-w-sm mx-auto w-full px-4">
-          <MLuminososCard />
+          <div className="-mb-3">
+            <MLuminososCard />
+          </div>
+          <div className="flex justify-center">
+            <MLuminososAudio />
+          </div>
           <div className="mt-4 flex flex-col gap-3">
             <PreMisteriosLuminososAudio />
             <PrimerMisterioLuminosoAudio />

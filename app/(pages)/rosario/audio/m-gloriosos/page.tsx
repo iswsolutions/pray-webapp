@@ -1,4 +1,5 @@
 import MGloriososCard from "@/components/rosario-v2-audio/MGloriososCard";
+import MGloriososAudio from "@/components/rosario-v2-audio/MGloriososAudio";
 import PreMisterioDolorososAudio from "@/components/rosario-v2-audio/PreMisterioDolorososAudio";
 import PrimerMisterioGloriosoAudio from "@/components/rosario-v2-audio/PrimerMisterioGloriosoAudio";
 import SegundoMisterioGloriosoAudio from "@/components/rosario-v2-audio/SegundoMisterioGloriosoAudio";
@@ -25,7 +26,12 @@ export default function MGloriososAudioPage() {
       {/* Centered content */}
       <div className="flex-1 flex flex-col justify-center">
         <div className="max-w-sm mx-auto w-full px-4">
-          <MGloriososCard />
+          <div className="-mb-3">
+            <MGloriososCard />
+          </div>
+          <div className="flex justify-center">
+            <MGloriososAudio />
+          </div>
           <div className="mt-3">
             <PreMisterioDolorososAudio />
           </div>
