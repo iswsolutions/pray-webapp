@@ -1,6 +1,9 @@
 export default function CredoCard() {
   return (
     <article className="relative rounded-3xl border border-sky-100 bg-white/80 p-5 pb-12 text-left shadow-lg shadow-sky-100 transition duration-200 hover:-translate-y-1 hover:border-sky-200 hover:bg-white sm:p-6 sm:pb-14 md:p-8">
+      <p className="mt-4 text-2xl font-semibold text-center text-slate-700 sm:text-3xl">
+        Credo
+      </p>
       <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
         Creo en Dios, Padre Todopoderoso, Creador del cielo y de la tierra.
       </p>
@@ -16,9 +19,6 @@ export default function CredoCard() {
         Creo en el Espíritu Santo, la santa Iglesia Católica, la comunión de los
         santos, el perdón de los pecados, la resurrección de la carne y la vida
         eterna. Amén.
-      </p>
-      <p className="absolute bottom-4 right-5 text-sm tracking-wide text-slate-600">
-        nombre de la oración: Credo
       </p>
     </article>
   );
