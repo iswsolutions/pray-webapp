@@ -1,5 +1,35 @@
-{/* L: this card is used in: RosarioAudioPage, MGozososAudioPage */}
+"use client";
+// L: this card is used in: RosarioAudioPage, MGozososAudioPage
+
+import { useRef, useState } from "react";
+
+type AudioState = "idle" | "playing";
+
 export default function MGozososCard({ isHighlighted }: { isHighlighted?: boolean }) {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [audioState, setAudioState] = useState<AudioState>("idle");
+
+  function getAudio(): HTMLAudioElement {
+    if (!audioRef.current) {
+      audioRef.current = new Audio("/api/audio/m-gozosos/mensaje");
+      audioRef.current.onended = () => setAudioState("idle");
+    }
+    return audioRef.current;
+  }
+
+  function handlePlay(e: React.MouseEvent) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (audioState === "playing") {
+      getAudio().pause();
+      getAudio().currentTime = 0;
+      setAudioState("idle");
+    } else {
+      getAudio().play();
+      setAudioState("playing");
+    }
+  }
+
   return (
     <a
       href="/rosario/audio/m-gozosos"
@@ -22,24 +52,58 @@ export default function MGozososCard({ isHighlighted }: { isHighlighted?: boolea
         }}
       />
 
-      <div className="flex items-center justify-center gap-3">
-        <span
-          className="text-xl"
-          style={{ color: "#1a6bb5", textShadow: "0 0 18px rgba(26,107,181,0.45)" }}
-        >
-          {"✝\uFE0E"}
-        </span>
-        <p
-          className="font-semibold uppercase"
-          style={{
-            color: "#1a6bb5",
-            fontSize: "1rem",
-            letterSpacing: "0.18em",
-            textShadow: "0 1px 8px rgba(26,107,181,0.3)",
-          }}
-        >
-          Misterios Gozosos
-        </p>
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <span
+            className="text-xl"
+            style={{ color: "#1a6bb5", textShadow: "0 0 18px rgba(26,107,181,0.45)" }}
+          >
+            {"✝\uFE0E"}
+          </span>
+          <p
+            className="font-semibold uppercase"
+            style={{
+              color: "#1a6bb5",
+              fontSize: "1rem",
+              letterSpacing: "0.18em",
+              textShadow: "0 1px 8px rgba(26,107,181,0.3)",
+            }}
+          >
+            Misterios Gozosos
+          </p>
+        </div>
+
+        <div className="relative flex items-center justify-center flex-shrink-0 w-6 h-6">
+          {/* Pulse ring — visible only when idle */}
+          {audioState === "idle" && (
+            <span
+              className="absolute inset-0 rounded-full"
+              style={{ background: "rgba(26,107,181,0.15)" }}
+            />
+          )}
+          <button
+            type="button"
+            onClick={handlePlay}
+            className="relative flex items-center justify-center w-6 h-6 rounded-full transition-all duration-200 hover:scale-110 active:scale-95"
+            style={{
+              background: "#5b9fd6",
+              boxShadow:
+                audioState === "playing"
+                  ? "0 0 0 3px rgba(91,159,214,0.35), 0 0 10px rgba(91,159,214,0.5)"
+                  : undefined,
+            }}
+          >
+            {audioState === "playing" ? (
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-2 h-2 text-white">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-2 h-2 text-white">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Bottom glow accent */}
