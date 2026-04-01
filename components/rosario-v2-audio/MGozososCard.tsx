@@ -53,18 +53,12 @@ export default function MGozososCard({ isHighlighted }: { isHighlighted?: boolea
       />
 
       <div className="flex items-center justify-between gap-3">
-        <div className="flex items-center gap-3">
-          <span
-            className="text-xl"
-            style={{ color: "#1a6bb5", textShadow: "0 0 18px rgba(26,107,181,0.45)" }}
-          >
-            {"✝\uFE0E"}
-          </span>
+        <div className="flex flex-1 items-center justify-center">
           <p
-            className="font-semibold uppercase"
+            className="font-bold uppercase"
             style={{
               color: "#1a6bb5",
-              fontSize: "1rem",
+              fontSize: "1.1rem",
               letterSpacing: "0.18em",
               textShadow: "0 1px 8px rgba(26,107,181,0.3)",
             }}
@@ -73,7 +67,7 @@ export default function MGozososCard({ isHighlighted }: { isHighlighted?: boolea
           </p>
         </div>
 
-        <div className="relative flex items-center justify-center flex-shrink-0 w-6 h-6">
+        <div className="relative flex items-center justify-center flex-shrink-0 w-8 h-8">
           {/* Pulse ring — visible only when idle */}
           {audioState === "idle" && (
             <span
@@ -84,7 +78,7 @@ export default function MGozososCard({ isHighlighted }: { isHighlighted?: boolea
           <button
             type="button"
             onClick={handlePlay}
-            className="relative flex items-center justify-center w-6 h-6 rounded-full transition-all duration-200 hover:scale-110 active:scale-95"
+            className="relative flex items-center justify-center w-8 h-8 rounded-full transition-all duration-200 hover:scale-110 active:scale-95"
             style={{
               background: "#5b9fd6",
               boxShadow:
@@ -94,11 +88,11 @@ export default function MGozososCard({ isHighlighted }: { isHighlighted?: boolea
             }}
           >
             {audioState === "playing" ? (
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-2 h-2 text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 text-white">
                 <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
               </svg>
             ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-2 h-2 text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 text-white">
                 <path d="M8 5v14l11-7z" />
               </svg>
             )}
