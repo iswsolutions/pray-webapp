@@ -54,11 +54,11 @@ export default function MGloriososCard({ isHighlighted }: { isHighlighted?: bool
       <div className="flex items-center justify-between gap-3">
         <div className="flex flex-1 items-center justify-center">
           <p
-            className="font-bold uppercase"
+            className="font-bold uppercase whitespace-nowrap"
             style={{
               color: "#1a6bb5",
               fontSize: "1.1rem",
-              letterSpacing: "0.18em",
+              letterSpacing: "0.1em",
               textShadow: "0 1px 8px rgba(26,107,181,0.3)",
             }}
           >
