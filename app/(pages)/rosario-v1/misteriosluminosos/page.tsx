@@ -22,7 +22,7 @@ import Uno from "@/components/rosario-v1/Uno";
 
 export default function MisteriosLuminososPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-50 via-blue-50 to-white text-slate-900">
+    <div className="min-h-screen bg-gradient-to-b from-sky-50 via-blue-50 to-white text-slate-900" style={{ zoom: 1.1 }}>
       <main className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-12 sm:gap-12 sm:px-6 sm:py-14 md:px-10 lg:py-24">
         <BackToHomeButton />
         <section className="space-y-4 text-center sm:space-y-6">
