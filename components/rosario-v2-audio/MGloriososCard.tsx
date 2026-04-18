@@ -88,7 +88,7 @@ export default function MGloriososCard({ isHighlighted }: { isHighlighted?: bool
           >
             {audioState === "playing" ? (
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 text-white">
-                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                <path d="M6 6h12v12H6z" />
               </svg>
             ) : (
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 text-white">
