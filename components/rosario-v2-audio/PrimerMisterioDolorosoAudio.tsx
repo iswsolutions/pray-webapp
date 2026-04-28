@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 type AudioState = "idle" | "playing" | "paused";
 
 const AUDIO_URL = "/api/audio/m-dolorosos/primer-misterio";
+const MEDITACION_URL = "/api/audio/m-dolorosos/primer-misterio-meditacion";
 
 function formatTime(seconds: number): string {
   const m = Math.floor(seconds / 60);
@@ -19,6 +20,9 @@ export default function PrimerMisterioDolorosoAudio() {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const isSeekingRef = useRef(false);
+
+  const meditacionRef = useRef<HTMLAudioElement | null>(null);
+  const [meditacionState, setMeditacionState] = useState<AudioState>("idle");
 
   function getAudio(): HTMLAudioElement {
     if (!audioRef.current) {
@@ -78,6 +82,26 @@ export default function PrimerMisterioDolorosoAudio() {
     isSeekingRef.current = false;
   }
 
+  function getMeditacion(): HTMLAudioElement {
+    if (!meditacionRef.current) {
+      meditacionRef.current = new Audio(MEDITACION_URL);
+      meditacionRef.current.onended = () => setMeditacionState("idle");
+    }
+    return meditacionRef.current;
+  }
+
+  function handleMeditacion() {
+    const med = getMeditacion();
+    if (meditacionState === "playing") {
+      med.pause();
+      med.currentTime = 0;
+      setMeditacionState("idle");
+    } else {
+      med.play();
+      setMeditacionState("playing");
+    }
+  }
+
   return (
     <article className="rounded-2xl border border-sky-100 bg-white/80 p-3 text-left shadow shadow-sky-100 transition duration-200 hover:-translate-y-1 hover:border-sky-200 hover:bg-white sm:p-4">
       <div className="flex items-center gap-3">
@@ -95,53 +119,77 @@ export default function PrimerMisterioDolorosoAudio() {
       </div>
 
       {/* Audio controls */}
-      <div className="mt-3 flex items-center justify-center gap-2">
-        {/* Play */}
-        <button
-          type="button"
-          onClick={handlePlay}
-          className="flex items-center justify-center w-9 h-9 rounded-full transition-all duration-200 hover:scale-110 active:scale-95 hover:shadow-md hover:shadow-sky-200"
-          style={{
-            background: "#0ea5e9",
-            boxShadow: audioState === "playing"
-              ? "0 0 0 3px rgba(14,165,233,0.35), 0 0 10px rgba(14,165,233,0.5)"
-              : undefined,
-            transform: audioState === "playing" ? "scale(1.12)" : undefined,
-          }}
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-white">
-            <path d="M8 5v14l11-7z" />
-          </svg>
-        </button>
+      <div className="mt-3 grid grid-cols-[0.5fr_1fr_1.5fr] items-center">
+        {/* Left spacer — mirrors meditación button to keep audio controls truly centered */}
+        <div />
 
-        {/* Pause */}
-        <button
-          type="button"
-          onClick={handlePause}
-          className="flex items-center justify-center w-9 h-9 rounded-full transition-all duration-200 hover:scale-110 active:scale-95 hover:shadow-md"
-          style={{
-            background: audioState === "paused" ? "rgba(14,165,233,0.35)" : "rgba(14,165,233,0.12)",
-            boxShadow: audioState === "paused" ? "0 0 0 2px rgba(14,165,233,0.3)" : undefined,
-          }}
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" style={{ color: "#0369a1" }}>
-            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-          </svg>
-        </button>
+        <div className="flex items-center justify-center gap-2">
+          {/* Play */}
+          <button
+            type="button"
+            onClick={handlePlay}
+            className="flex items-center justify-center w-9 h-9 rounded-full transition-all duration-200 hover:scale-110 active:scale-95 hover:shadow-md hover:shadow-sky-200"
+            style={{
+              background: "#0ea5e9",
+              boxShadow: audioState === "playing"
+                ? "0 0 0 3px rgba(14,165,233,0.35), 0 0 10px rgba(14,165,233,0.5)"
+                : undefined,
+              transform: audioState === "playing" ? "scale(1.12)" : undefined,
+            }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-white">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </button>
 
-        {/* Stop */}
-        <button
-          type="button"
-          onClick={handleStop}
-          className="flex items-center justify-center w-9 h-9 rounded-full transition-all duration-200 hover:scale-110 active:scale-95 hover:shadow-md"
-          style={{
-            background: audioState === "idle" ? "rgba(14,165,233,0.25)" : "rgba(14,165,233,0.12)",
-          }}
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" style={{ color: "#0369a1" }}>
-            <path d="M6 6h12v12H6z" />
-          </svg>
-        </button>
+          {/* Pause */}
+          <button
+            type="button"
+            onClick={handlePause}
+            className="flex items-center justify-center w-9 h-9 rounded-full transition-all duration-200 hover:scale-110 active:scale-95 hover:shadow-md"
+            style={{
+              background: audioState === "paused" ? "rgba(14,165,233,0.35)" : "rgba(14,165,233,0.12)",
+              boxShadow: audioState === "paused" ? "0 0 0 2px rgba(14,165,233,0.3)" : undefined,
+            }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" style={{ color: "#0369a1" }}>
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+            </svg>
+          </button>
+
+          {/* Stop */}
+          <button
+            type="button"
+            onClick={handleStop}
+            className="flex items-center justify-center w-9 h-9 rounded-full transition-all duration-200 hover:scale-110 active:scale-95 hover:shadow-md"
+            style={{
+              background: audioState === "idle" ? "rgba(14,165,233,0.25)" : "rgba(14,165,233,0.12)",
+            }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" style={{ color: "#0369a1" }}>
+              <path d="M6 6h12v12H6z" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Meditación */}
+        <div className="flex justify-end pl-8">
+          <button
+            type="button"
+            onClick={handleMeditacion}
+            className="rounded-full px-4 py-2 text-sm font-semibold text-sky-700 transition-all duration-200 hover:scale-105 active:scale-95"
+            style={{
+              background: meditacionState === "playing"
+                ? "rgba(14,165,233,0.30)"
+                : "rgba(14,165,233,0.12)",
+              boxShadow: meditacionState === "playing"
+                ? "0 0 0 2px rgba(14,165,233,0.4)"
+                : undefined,
+            }}
+          >
+            meditación
+          </button>
+        </div>
       </div>
 
       {/* Progress bar */}
