@@ -25,19 +25,21 @@ export default function MariaMadreDeGraciaComponentAudio() {
         }}
       />
 
-      {/* Top row: badge + cross */}
-      <div className="flex items-center justify-between mb-6">
+      {/* Cross — pinned top right */}
+      <span
+        className="absolute top-6 right-8 text-3xl"
+        style={{ color: "#c89a20", textShadow: "0 0 18px rgba(200,154,32,0.45)" }}
+      >
+        {"✝︎"}
+      </span>
+
+      {/* Badge — centered like title */}
+      <div className="flex justify-center mb-6">
         <span
-          className="text-sm font-medium px-4 py-1.5 rounded-full"
+          className="text-lg font-bold px-4 py-1.5 rounded-full text-center"
           style={{ background: "rgba(200,154,32,0.12)", color: "#9a7848", letterSpacing: "0.05em" }}
         >
           en Audio
-        </span>
-        <span
-          className="text-3xl"
-          style={{ color: "#c89a20", textShadow: "0 0 18px rgba(200,154,32,0.45)" }}
-        >
-          {"✝\uFE0E"}
         </span>
       </div>
 

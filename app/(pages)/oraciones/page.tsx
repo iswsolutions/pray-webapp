@@ -53,9 +53,9 @@ export default function OracionesPage() {
                 }}
               />
 
-              <div className="flex items-center justify-between gap-3 px-1">
+              <div className="flex items-center justify-center px-1">
                 <p
-                  className="font-semibold uppercase"
+                  className="font-semibold uppercase text-center"
                   style={{
                     color: "#9a6812",
                     fontSize: "1rem",
@@ -65,7 +65,6 @@ export default function OracionesPage() {
                 >
                   {label}
                 </p>
-                <span className="text-xs" style={{ color: "#c89a20" }}>→</span>
               </div>
 
               {/* Bottom glow accent */}
