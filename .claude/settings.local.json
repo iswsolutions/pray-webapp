@@ -4,7 +4,11 @@
       "WebSearch",
       "Bash(npm audit:*)",
       "Bash(git:*)",
-      "Bash(xargs sed:*)"
+      "Bash(xargs sed:*)",
+      "Bash(Get-ChildItem -Path \"C:\\\\NextJSProjects\\\\pray-webapp\" -Recurse -Force)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(grep -r \"toString\\\\|String\\(.*\\)\\\\|interpolate\\\\|\\\\${.*?request\\\\|template\" \"C:\\\\NextJSProjects\\\\pray-webapp\\\\app\\\\api\")",
+      "Bash(Remove-Item *)"
     ]
   }
 }

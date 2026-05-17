@@ -5,10 +5,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev      # Start development server (http://localhost:3000)
-npm run build    # Build for production
-npm run start    # Start production server
-npm run lint     # Run ESLint
+pnpm dev      # Start development server (http://localhost:3000)
+pnpm build    # Build for production
+pnpm start    # Start production server
+pnpm lint     # Run ESLint
 ```
 
 No test runner is currently configured.
